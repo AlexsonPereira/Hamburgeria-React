@@ -1,7 +1,18 @@
 import React from "react"
 import { CardCart } from "./style"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const CartProduct = ({img,name,category,quantity,cart,setCart}) => {
+   const notifyTest = () => toast.success('Removido com sucesso', {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      });
    const removeItenCart = () => {
       const filtro = cart.findIndex(e => e.name === name)
       if(cart[filtro].quantity !== 1){
@@ -10,10 +21,12 @@ export const CartProduct = ({img,name,category,quantity,cart,setCart}) => {
       }else{
          const filtred = cart.filter(e => e.name !== name)
          setCart([...filtred])
+         notifyTest()
       }
    }
 
    return (
+      <>
       <CardCart>
          <div>
             <div>
@@ -27,5 +40,8 @@ export const CartProduct = ({img,name,category,quantity,cart,setCart}) => {
          <span>{quantity}</span>  
          <button onClick={()=>{removeItenCart()}}>Remover</button>
       </CardCart>
+         <ToastContainer/>
+      </>
+
    )
 }
