@@ -13,6 +13,7 @@ export const CartProduct = ({img,name,category,quantity,cart,setCart}) => {
       draggable: true,
       progress: undefined,
       });
+      
    const removeItenCart = () => {
       const filtro = cart.findIndex(e => e.name === name)
       if(cart[filtro].quantity !== 1){
