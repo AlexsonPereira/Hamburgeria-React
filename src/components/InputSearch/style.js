@@ -11,6 +11,14 @@ export const SearchHeader = styled.div`
     position: absolute;
     right: 8px;
   }
+
+  .BtnClose {
+    color: var(--color-secondary);
+    position: absolute;
+    right: 90px;
+    font-size: 25px;
+    cursor: pointer;
+  }
 `
 export const InputDefault = styled.input`
   max-width: 350px;

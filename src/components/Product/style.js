@@ -5,6 +5,7 @@ export const CardIten = styled.li`
   width: 30%;
   border: 2px solid var(--color-grey-20);
   border-radius: 4px;
+  height: 310px;
 
   @media (max-width: 550px) {
     width: 350px;

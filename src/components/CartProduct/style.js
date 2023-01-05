@@ -5,6 +5,7 @@ export const CardCart = styled.li`
   width: 100%;
   justify-content: space-between;
   position: relative;
+  animation: Appear 1s forwards;
 
   div {
     display: flex;
@@ -46,5 +47,14 @@ export const CardCart = styled.li`
     bottom: 15px;
     right: 25px;
     color: var(--color-grey-50);
+  }
+
+  @keyframes Appear {
+    0% {
+      transform: translate(-50px, 0px);
+    }
+    100% {
+      transform: translate(0px, 0px);
+    }
   }
 `
